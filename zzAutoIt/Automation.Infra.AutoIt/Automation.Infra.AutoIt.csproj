@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Automation.Infra.Interfaces\Automation.Infra.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AutoItX3.Assembly">
+      <HintPath>..\..\..\..\..\..\..\..\zzzTools\_DEV\zzzAutomation\AutoIt\AutoIt3.3.16.1\AutoItX\AutoItX3.Assembly.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
