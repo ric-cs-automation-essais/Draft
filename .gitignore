@@ -1,0 +1,7 @@
+#le dossier .vs de la racine (probablement celui de VSCode cette fois, le cas échéant)
+.vs
+
+#les sous-sous-sous-...-dossiers à exclure au complet
+*/**/.vs/*
+*/**/bin/*
+*/**/obj/*
