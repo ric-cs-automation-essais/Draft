@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
-using Automation.Infra.Interfaces;
+using System.Threading;
 
 using AutoIt;
-using System.Threading;
-using System.Collections.Generic;
+
+using Automation.Infra.Interfaces;
+
 
 namespace Automation.Infra.AutoIt
 {
@@ -12,14 +14,38 @@ namespace Automation.Infra.AutoIt
     {
         public AutoItAutomation()
         {
+            /*
+            Thread.Sleep(1000);
+            AutoItX.Send("^!c"); //CTRL+ALT+C
+            Thread.Sleep(5000);
+            AutoItX.Send("123{+}2=");
+            Thread.Sleep(2000);
+            AutoItX.Send("!{F4}"); //ALT+F4
+            Thread.Sleep(2000);
+            */
+
+
+            //var pos = AutoItX.MouseGetPos();
+            //while (pos.X < 800)
+            //{
+            //    pos = AutoItX.MouseGetPos();
+            //    Console.WriteLine($"X={pos.X} ; Y={pos.Y}");
+            //}
+            //return;
+
+            //AutoItX.MouseClickDrag("LEFT", 150, 629, 130, 828); //Drag and Drop
+            //return;
+            
             new MouseMoveOperations(new List<IMouseSetPositionOperation>
             {
                 new AutoItMouseSetPositionOperation(10, 20, 5),
-                new AutoItMouseSetPositionOperation(100, 200, 50),
-                new AutoItMouseSetPositionOperation(200, 300, 100),
-                new AutoItMouseSetPositionOperation(500, 400, 2000),
-                new AutoItMouseSetPositionOperation(800, 600, 1000),
+                new AutoItMouseSetPositionOperation(368, 1184, 50),
+                //new AutoItMouseSetPositionOperation(200, 300, 100),
+                //new AutoItMouseSetPositionOperation(500, 400, 2000),
+                //new AutoItMouseSetPositionOperation(800, 600, 1000),
             }).execute();
+            //AutoItX.MouseClick();
+            
         }
     }
 }
@@ -104,6 +130,8 @@ namespace Automation
         protected override bool _execute()
         {
             AutoItX.MouseMove(coord.X, coord.Y);
+            
+            //var pos = AutoItX.MouseGetPos(); Console.WriteLine($"X={coord.X} ; Y={coord.Y}  / {coord.X==pos.X};{coord.Y==pos.Y}");
             return true;
         }
     }
